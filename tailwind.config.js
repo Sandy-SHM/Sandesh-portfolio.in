@@ -4,24 +4,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: '#F1F2F5',
-        paper2: '#FFFFFF',
-        ink: '#14171F',
-        muted: '#6B7280',
-        line: '#DBDEE4',
-        term: '#12141B',
-        termLine: '#262A36',
-        termText: '#D7DAE2',
-        type: {
-          DEFAULT: '#2F5DE3',
-          soft: '#5E82EE',
+        base: '#0A0C12',
+        surface: '#12151F',
+        surface2: '#191D2A',
+        line: '#242938',
+        ink: '#E7E9F0',
+        muted: '#8A90A6',
+        indigo: {
+          DEFAULT: '#6C6BFF',
+          soft: '#9E9DFF',
         },
-        verified: '#1F9D63',
-        pending: '#C97A1D',
+        amber: {
+          DEFAULT: '#F5A524',
+        },
       },
       fontFamily: {
+        display: ['"Space Grotesk"', 'sans-serif'],
+        body: ['"Inter"', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
-        body: ['"IBM Plex Sans"', 'sans-serif'],
+      },
+      backgroundImage: {
+        'grid-fade':
+          'linear-gradient(to bottom, rgba(10,12,18,0) 0%, #0A0C12 85%), radial-gradient(ellipse 80% 50% at 50% 0%, rgba(108,107,255,0.15), transparent)',
       },
     },
   },

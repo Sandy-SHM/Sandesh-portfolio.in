@@ -2,13 +2,13 @@ import { motion } from 'framer-motion'
 
 const groups = [
   {
-    field: 'languages',
-    type: 'string[]',
+    title: 'Languages',
+    tag: '01',
     items: ['Python', 'Java', 'C++', 'TypeScript'],
   },
   {
-    field: 'ai_ml_tooling',
-    type: 'string[]',
+    title: 'AI / ML & LLM Tooling',
+    tag: '02',
     items: [
       'LangChain',
       'RAG Pipelines',
@@ -19,63 +19,67 @@ const groups = [
       'Llama 3.3 70B',
       'scikit-learn',
     ],
-    wide: true,
   },
   {
-    field: 'backend_infra',
-    type: 'string[]',
-    items: ['FastAPI', 'REST APIs', 'SSE Streaming', 'Docker', 'Git', 'Render', 'Vercel'],
+    title: 'Backend & Infrastructure',
+    tag: '03',
+    items: ['FastAPI', 'REST API Design', 'SSE Streaming', 'Docker', 'Git/GitHub', 'Render', 'Vercel'],
   },
   {
-    field: 'frontend_data',
-    type: 'string[]',
+    title: 'Frontend & Data',
+    tag: '04',
     items: ['React', 'Streamlit', 'NumPy', 'Pandas', 'Matplotlib', 'Plotly', 'PyMuPDF', 'ReportLab'],
   },
   {
-    field: 'core_cs',
-    type: 'string[]',
+    title: 'Core CS',
+    tag: '05',
     items: ['Data Structures & Algorithms', 'OOP', 'System Design', 'Cloud Computing'],
   },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative py-24 border-t border-line">
-      <div className="max-w-5xl mx-auto px-6">
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+    <section id="skills" className="relative py-28 border-t border-line">
+      <div className="max-w-6xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          className="font-mono text-xs text-muted mb-8"
+          transition={{ duration: 0.5 }}
+          className="mb-14"
         >
-          /skills.ts
-        </motion.p>
+          <span className="font-mono text-xs text-indigo-soft uppercase tracking-widest">Skills</span>
+          <h2 className="font-display text-3xl sm:text-4xl font-semibold mt-3 text-ink">
+            The stack behind the projects.
+          </h2>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-4">
-          {groups.map((g, i) => (
+        <div className="grid md:grid-cols-2 gap-5">
+          {groups.map((group, i) => (
             <motion.div
-              key={g.field}
-              initial={{ opacity: 0, y: 16 }}
+              key={group.title}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className={`bg-paper2 border border-line rounded-lg p-5 ${g.wide ? 'md:col-span-2' : ''}`}
+              className={`border border-line bg-surface rounded-2xl p-6 hover:border-indigo/50 transition-colors ${
+                group.title === 'AI / ML & LLM Tooling' ? 'md:col-span-2' : ''
+              }`}
             >
-              <div className="font-mono text-[13px] mb-3">
-                <span className="text-type">{g.field}</span>
-                <span className="text-muted">: {g.type} = [</span>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-display text-lg text-ink">{group.title}</h3>
+                <span className="font-mono text-xs text-muted">{group.tag}</span>
               </div>
-              <div className="flex flex-wrap gap-2 pl-4">
-                {g.items.map((item) => (
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
                   <span
                     key={item}
-                    className="font-mono text-[12px] text-ink bg-paper border border-line rounded px-2.5 py-1.5"
+                    className="font-mono text-xs text-muted border border-line rounded-md px-2.5 py-1.5 hover:text-indigo-soft hover:border-indigo/40 transition-colors"
                   >
-                    "{item}"
+                    {item}
                   </span>
                 ))}
               </div>
-              <div className="font-mono text-[13px] text-muted mt-3">]</div>
             </motion.div>
           ))}
         </div>

@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const links = [
-  { label: 'about', href: '#about' },
-  { label: 'skills', href: '#skills' },
-  { label: 'projects', href: '#projects' },
-  { label: 'contact', href: '#contact' },
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export default function Navbar() {
@@ -19,44 +19,46 @@ export default function Navbar() {
 
   return (
     <motion.header
-      initial={{ y: -20, opacity: 0 }}
+      initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 border-b transition-colors duration-300 ${
-        scrolled ? 'bg-paper/90 backdrop-blur-sm border-line' : 'bg-transparent border-transparent'
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${
+        scrolled ? 'bg-base/80 backdrop-blur-md border-b border-line' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="#top" className="font-mono text-sm text-ink">
-          sandesh<span className="text-muted">.mane</span>
+      <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+        <a href="#top" className="font-mono text-sm text-ink tracking-tight">
+          sandesh<span className="text-indigo">.mane</span>
         </a>
 
-        <ul className="hidden md:flex items-center gap-7">
+        <ul className="hidden md:flex items-center gap-1 bg-surface border border-line rounded-full px-1.5 py-1.5">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="font-mono text-[13px] text-muted hover:text-type transition-colors"
+                className="px-4 py-1.5 text-sm text-muted hover:text-ink rounded-full hover:bg-surface2 transition-colors"
               >
                 {link.label}
-                <span className="text-muted/50">()</span>
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <a
             href="/Sandesh_Mane_Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="font-mono text-[13px] text-ink underline decoration-line underline-offset-4 hover:decoration-type hover:text-type transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 text-sm border border-line rounded-full px-4 py-1.5 text-ink hover:border-indigo hover:text-indigo transition-colors"
           >
-            resume.pdf
+            Resume ↗
           </a>
-          <span className="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] text-muted">
-            <span className="h-1.5 w-1.5 rounded-full bg-verified" />
-            status: open_to_work
+          <span className="inline-flex items-center gap-1.5 text-xs font-mono text-muted border border-line rounded-full pl-2.5 pr-3 py-1.5">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-amber"></span>
+            </span>
+            Open to Work
           </span>
         </div>
       </nav>

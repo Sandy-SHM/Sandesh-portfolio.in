@@ -8,7 +8,7 @@ import Contact from './components/Contact'
 
 export default function App() {
   return (
-    <div className="bg-paper text-ink font-body min-h-screen">
+    <div className="bg-base text-ink font-body min-h-screen">
       <Navbar />
       <main>
         <Hero />
