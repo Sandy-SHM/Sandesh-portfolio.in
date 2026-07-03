@@ -43,7 +43,7 @@ export default function About() {
             <p>
               I'm also drawn to where engineering meets decision-making — I worked on a{' '}
               <span className="text-ink">sentiment-driven trader performance analysis</span>{' '}
-              on Hyperliquid data for PrimeTrade.ai, and I'm increasingly interested in
+              on Hyperliquid data, and I'm increasingly interested in
               fintech and product management: understanding not just how to build a
               system, but why it should exist and who it's for.
             </p>

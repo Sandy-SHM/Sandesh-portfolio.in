@@ -46,7 +46,7 @@ const projects = [
     name: 'Bitcoin Sentiment Trader Analysis',
     status: 'Complete',
     description:
-      'A data science hiring assignment for PrimeTrade.ai — analyzing how market sentiment correlates with trader performance on Hyperliquid, a decentralized derivatives exchange.',
+      'A data science project analyzing how market sentiment correlates with trader performance on Hyperliquid, a decentralized derivatives exchange.',
     highlight: 'Sentiment data joined against real trade performance, not just price data.',
     stack: ['Python', 'Pandas', 'Data Analysis'],
     live: null,
