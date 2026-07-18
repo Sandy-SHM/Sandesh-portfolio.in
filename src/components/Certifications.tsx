@@ -17,9 +17,9 @@ const certs = [
     date: 'March 2026',
   },
   {
-    name: 'SQL, ETL & Data Warehousing',
-    issuer: 'IBM / Coursera',
-    date: 'In progress',
+    name: 'ServiceNow Virtual Internship Program',
+    issuer: 'ServiceNow University, AICTE & SmartBridge',
+    date: 'July 2026',
   },
 ]
 

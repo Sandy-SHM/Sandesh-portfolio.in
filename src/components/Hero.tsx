@@ -55,7 +55,7 @@ export default function Hero() {
         >
           <span className="block text-ink">Sandesh</span>
           <span className="block bg-gradient-to-r from-indigo-soft via-indigo to-amber bg-clip-text text-transparent">
-            Mane
+            Sharad Mane
           </span>
         </motion.h1>
 
